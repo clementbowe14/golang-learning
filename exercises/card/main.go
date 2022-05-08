@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 type Card struct {
 	value int
 	name  string
@@ -12,22 +10,16 @@ func createCard(value int, name string) *Card {
 
 	return &card
 }
+
 func main() {
 
-	cards := deck{"king", "queen", "jack", "One of Diamonds", newCard()}
-	cards = append(cards, "Six of Spades")
-	fmt.Println(cards)
-
-	for _, card := range cards {
-		fmt.Println(card)
-	}
-
-	myFirstCard := createCard(14, "King of Hearts")
-	fmt.Println(*myFirstCard)
+	cards := newDeck()
+	cards.shuffle()
+	cards.print()
 
 }
 
-func newCard() string {
+// func newCard() string {
 
-	return "Five of Diamonds"
-}
+// 	return "Five of Diamonds"
+// }
