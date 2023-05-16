@@ -4,6 +4,7 @@ import "fmt"
 
 type Item interface {
 	GetPrice() float64
+	GetWeight() float64
 }
 
 type Customer struct {
@@ -12,9 +13,9 @@ type Customer struct {
 }
 
 type Bike interface {
+	Item
 	GetWheelCount() int32
-	Ride()
-}
+	Ride()}
 
 type MotorBike struct {
 	wheelCount int32
@@ -59,6 +60,10 @@ func (m MotorBike) GetMaxSpeed() float64 {
 
 func (m MotorBike) GetPrice() float64 {
 	return m.price
+}
+
+func (m MotorBike) GetWeight() float64 {
+	return m.weight
 }
 
 func (m MotorBike) GetModelName() string {

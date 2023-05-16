@@ -1,3 +1,3 @@
-module puppy
+module github.com/clementbowe14/golang-learning
 
-go 1.17
+go 1.18
