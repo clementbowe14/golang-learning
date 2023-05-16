@@ -15,7 +15,8 @@ type Customer struct {
 type Bike interface {
 	Item
 	GetWheelCount() int32
-	Ride()}
+	Ride()
+}
 
 type MotorBike struct {
 	wheelCount int32
